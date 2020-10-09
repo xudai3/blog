@@ -1,0 +1,11 @@
+id = "xudai"
+
+[email]
+username = "xudai"
+host = "qq.com"
+
+[name]
+display = "xudai"
+
+[social]
+email = "xudai3@qq.com"
