@@ -35,6 +35,17 @@ $ cd $your_blog_name
 $ git init
 # 作为子模块方便管理和更新
 $ git submodule add https://github.com/MunifTanjim/minimo.git themes/minimo
+# 
+
+```
+
+如果之后有对主题进行自定义修改，又想忽略掉这个子模块的git变动，可以修改.gitmodule文件，加上ignore = dirty
+
+```
+[submodule "themes/minimo"]
+    path = themes/minimo
+    url = https://github.com/MunifTanjim/minimo
+    ignore = dirty
 ```
 
 #### minimo主题配置
@@ -60,6 +71,14 @@ slug: posts
 menu: main
 weight: -290
 ---
+```
+
+##### 添加百度统计
+
+修改这个模版文件，在`</head>`之前放入百度统计生成的`<script>...</script>`代码就行了
+
+```shell
+$ vim /themes/minimo/layouts/partials/head/head.html
 ```
 
 ### create new post
