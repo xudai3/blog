@@ -111,7 +111,7 @@ $ hugo -D
 
 ### 上传到Github Pages
 
-#### create GitHub repo
+#### Create GitHub repo
 
 先在GitHub上创建两个repo，一个是github pages的，格式必须是xudai3.github.io这样，另外一个随便取名叫blog
 
@@ -119,7 +119,7 @@ xudai3.github.io仓库用来存放public文件夹下的静态网站，上传之�
 
 而blog仓库可以用来存放这整个的hugo文件夹
 
-#### upload
+#### Upload
 
 可以在hugo项目目录下的.gitignore里把public文件夹忽略掉，然后`git submodule add -f git@github.com:xudai3/xudai3.github.io.git public`把public作为一个git子模块分开管理
 
@@ -128,3 +128,5 @@ xudai3.github.io仓库用来存放public文件夹下的静态网站，上传之�
 还有因为之前被忽略了，要加上-f强制执行才能执行成功
 
 之后就按照正常的git上传流程就行了
+
+#### Travis-ci

@@ -5,7 +5,7 @@ install:
 
 before_script:
   - git config --global user.name "xudai3"
-  - git config --global user.name "xudai3@qq.com"
+  - git config --global user.email "xudai3@qq.com"
 
 script:
   - hugo -D
