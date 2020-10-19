@@ -11,10 +11,9 @@ script:
   - hugo -D
 
 after_success:
-  - MESSAGE=$(git log --format=%B -n 1 $TRAVIS_COMMIT)
   - cd public
   - git init
   - git add .
-  - git remote add origin https://xudai3:${GITHUB_TOKEN}@github.com/xudai3/xudai3.github.io.git
-  - git commit -m ${MESSAGE}
+  - git remote add origin https://${GITHUB_TOKEN}@github.com/xudai3/xudai3.github.io.git
+  - git commit -m "travis update blog"
   - git push -u origin master -f
