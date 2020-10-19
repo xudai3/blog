@@ -75,10 +75,15 @@ weight: -290
 
 ##### 添加百度统计
 
-修改这个模版文件，在`</head>`之前放入百度统计生成的`<script>...</script>`代码就行了
+在head模板的`</head>`标签之前放入百度统计生成的`<script>...</script>`代码就行了
+
+hugo只需要在根目录的文件夹创建和主题同路径同名的文件就可以覆盖并生效，所以不需要修改主题的模板文件
 
 ```shell
-$ vim /themes/minimo/layouts/partials/head/head.html
+# minimo主题的head模板文件是这个/themes/minimo/layouts/partials/head/head.html
+$ mkdir -p layouts/partials/head/
+$ cp themes/minimo/layouts/partials/head/head.html layouts/partials/head/head.html
+$ vim layouts/partials/head/head.html
 ```
 
 ### create new post
