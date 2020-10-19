@@ -3,16 +3,18 @@ install:
   - sudo dpkg -i hugo*.deb
   - hugo version
 
+before_script:
+  - git config -global user.name "xudai"
+  - git config -global user.name "xudai3@qq.com"
+
 script:
   - hugo -D
 
 after_success:
-  - git config -global user.name "xudai"
-  - git config -global user.name "xudai3@qq.com"
-  - git clone https://${GITHUB_TOKEN}@github.com/xudai3/xudai3.github.io.git container
-  - rm -rf container/*
-  - cp -r public/* container
-  - cd container
+  - MESSAGE=$(git log --format=%B -n 1 $TRAVIS_COMMIT)
+  - cd public
+  - git init
   - git add .
-  - git commit -m "Travic update blog"
+  - git remote add origin https://${GITHUB_TOKEN}@github.com/xudai3/xudai3.github.io.git
+  - git commit -m ${MESSAGE}
   - git push -u origin master -f
