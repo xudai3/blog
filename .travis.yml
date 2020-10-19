@@ -4,8 +4,8 @@ install:
   - hugo version
 
 before_script:
-  - git config -global user.name "xudai"
-  - git config -global user.name "xudai3@qq.com"
+  - git config --global user.name "xudai"
+  - git config --global user.name "xudai3@qq.com"
 
 script:
   - hugo -D
