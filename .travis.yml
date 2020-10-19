@@ -11,9 +11,10 @@ script:
   - hugo -D
 
 after_success:
-  - cd public
-  - git init
+  - git clone https://${GITHUB_TOKEN}@github.com/xudai3/xudai3.github.io.git container
+  - rm -rf container/*
+  - cp -r public/* container
+  - cd container
   - git add .
-  - git remote add origin https://${GITHUB_TOKEN}@github.com/xudai3/xudai3.github.io.git
-  - git commit -m "travis update blog"
+  - git commit -m "Travis update blog"
   - git push -u origin master -f
