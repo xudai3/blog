@@ -9,7 +9,7 @@ script:
 after_success:
   - git config -global user.name "xudai"
   - git config -global user.name "xudai3@qq.com"
-  - git clone https://${ACCESS_TOKEN}@github.com/xudai3/xudai3.github.io.git container
+  - git clone https://${GITHUB_TOKEN}@github.com/xudai3/xudai3.github.io.git container
   - rm -rf container/*
   - cp -r public/* container
   - cd container
